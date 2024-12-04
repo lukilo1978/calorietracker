@@ -1,0 +1,93 @@
+<h1>{{title}}</h1>
+
+<form method="POST" action="/meals/add" class="meal-form">
+  <fieldset class="form-fieldset">
+    <label>
+      <input type="radio" name="mealType" value="meal" required> Meal
+    </label><br>
+    <label>
+      <input type="radio" name="mealType" value="snack" required> Snack
+    </label><br>
+    <label>
+      <input type="radio" name="mealType" value="drink" required> Drink
+    </label>
+  </fieldset>
+
+  <fieldset class="form-fieldset">
+    <label for="mealName">Meal Name:</label>
+    <input name="mealName" id="mealName" required class="form-input">
+  </fieldset>
+
+  <fieldset class="form-fieldset">
+    <label for="mealDescription">Meal Description:</label>
+    <input name="mealDescription" id="mealDescription" required class="form-input">
+  </fieldset>
+
+  <fieldset class="form-fieldset">
+    <label for="calories">Calories:</label>
+    <input name="calories" id="calories" type="number" min="0" required class="form-input">
+  </fieldset>
+
+  <fieldset class="form-fieldset">
+    <label for="carbohydrates">Carbohydrates:</label>
+    <input name="carbohydrates" id="carbohydrates" type="number" min="0" class="form-input">
+  </fieldset>
+
+  <fieldset class="form-fieldset">
+    <label for="proteins">Proteins:</label>
+    <input name="proteins" id="proteins" type="number" min="0" class="form-input">
+  </fieldset>
+
+  <fieldset class="form-fieldset">
+    <label for="fats">Fats:</label>
+    <input name="fats" id="fats" type="number" min="0" class="form-input">
+  </fieldset>
+
+  <button type="submit" class="submit-btn">Save</button>
+</form>
+
+<style>
+  /* Basic form styling */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .meal-form {
+    background-color: #f0f0f0;
+    padding: 30px;
+    border-radius: 8px;
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-fieldset {
+    border: none;
+    margin-bottom: 20px;
+  }
+
+  .form-fieldset label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.

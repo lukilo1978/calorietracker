@@ -1,0 +1,69 @@
+<h1 class="text-center">Meals</h1>
+
+{{#if user}}
+<div class="table-container">
+    <table class="table table-hover table-bordered" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Meal Type</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Calories</th>
+                <th>Carbohydrates</th>
+                <th>Proteins</th>
+                <th>Fats</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each meals}}
+            <tr>
+                <td>{{mealType}}</td>
+                <td>{{mealName}}</td>
+                <td>{{mealDescription}}</td>
+                <td>{{calories}} Kcal</td>
+                <td>{{carbohydrates}} g</td>
+                <td>{{proteins}} g</td>
+                <td>{{fats}} g</td>
+                <td>
+                    <!-- Edit Button -->
+                    <a href="/meals/edit/{{_id}}" class="btn btn-primary btn-sm">Edit</a>
+
+                    <!-- Delete Button -->
+                    <form action="/meals/delete/{{_id}}" method="POST" style="display: inline;">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<!-- Button to add a new meal -->
+<a href="meals/add" class="btn btn-success btn-lg btn-add-meal">Add a Meal</a>
+
+{{else}}
+<h2 class="text-center">Oops! We cannot find any information</h2>
+<p class="text-center">Log in to track your daily calorie intake.</p>
+<a href="users/login" class="login-link d-block text-center">Log in</a>
+{{/if}}
+
+<style>
+    /* Center the table */
+    .table-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    /* Hover effect on table rows */
+    .table-hover tbody tr:hover {
+        background-color: #f0f0f0; /* Light grey color on hover */
+    }
+
+    /* Optional: style for the Add a meal button */
+    .btn-add-meal {
+        margin-top: 20px;
+    }
+</style>

@@ -1,0 +1,34 @@
+
+<main>
+    <div class="d-flex justify-content-center p-5" style="height: 20vh;">
+        <div class="text-center">
+        <h2>{{title}}</h2>
+            {{#if user}}
+                <h3>Calories consumed today:{{totalCalories}}</h3>
+            {{else}}
+            <h2>Oops! We cannot find any information</h2>
+            <p>Log in to track your daily calorie intake.</p>
+            <a href="users/login" class="login-link">Log in</a>
+        </div>
+    </div>   
+        {{/if}}
+        <article>
+         <div class="d-flex align-items-center justify-content-center" style="height: 40vh;">
+            <div class="text-center">   
+                <h3>Search your ingredients</h3>
+                <p>Type in your ingredients and get all the nutritional information</p>
+                <form action="/api" method="POST" class="pt-4">
+                <div class="p-3">
+                    <label for="inputField">Search for:</label>
+                    <input type="text" id="inputField" name="inputValue" required>  
+                </div>
+                <div class="p-3">
+                    <label for="amount">Amount in grams:</label>
+                    <input type="number" id="amount" name="amount" required min="1">
+                </div> 
+                <button type="submit">Submit</button>
+                </form>
+            </div>
+         </div>
+        </article>
+    </main>

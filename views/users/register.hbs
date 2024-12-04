@@ -1,0 +1,124 @@
+<style>
+  /* Center the form container */
+  .form-container {
+    max-width: 400px; /* Limit form width */
+    margin: 50px auto; /* Center the form horizontally */
+    padding: 20px; /* Add padding inside the form */
+    background-color: #f8f9fa; /* Light grey background */
+    border: 1px solid #ddd; /* Light border for distinction */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+
+  /* Style the form heading */
+  .form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  /* Style the labels */
+  .form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+
+  /* Style the input fields */
+  .form-container input {
+    width: 100%; /* Full width */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+  }
+
+  /* Style the button */
+  .form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #17a2b8; /* Bootstrap info color */
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .form-container button:hover {
+    background-color: #138496; /* Darker shade on hover */
+  }
+
+  /* Style the footer link */
+  .form-container hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+
+  .form-container a {
+    color: #007bff; /* Bootstrap primary link color */
+    text-decoration: none;
+  }
+
+  .form-container a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="form-container">
+  <h1>
+    Register
+  </h1>
+  <form method="post">
+    <fieldset class="form-group">
+      <label for="email" class="col-2 control-label">
+        Email: *
+      </label>
+      <input
+        name="email"
+        id="email"
+        required
+        type="email"
+        placeholder="email@email.com"
+      />
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="password" class="col-2 control-label">
+        Password: *
+      </label>
+      <input
+        name="password"
+        id="password"
+        type="password"
+        required
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        placeholder="At least 8 characters, with 1 uppercase, 1 lowercase, and 1 number"
+      />
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="confirm" class="col-2 control-label">
+        Confirm Password: *
+      </label>
+      <input
+        name="confirm"
+        id="confirm"
+        type="password"
+        required
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        placeholder="Re-enter password"
+      />
+    </fieldset>
+    <fieldset class="form-group">
+      <button class="btn btn-info">
+        Register
+      </button>
+      <hr />
+      Already have an account?
+      <a href="/users/login" title="Login">
+        Login
+      </a>
+    </fieldset>
+  </form>
+</div>

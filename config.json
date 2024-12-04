@@ -1,0 +1,14 @@
+
+{
+    "defaults": {
+      "origin": "http://localhost:3000",
+      "transport": "session",
+      "state": true
+    },
+    "google": {
+      "key": "${CLIENT_ID}",
+      "secret": "${CLIENT_SECRET}",
+      "scope": ["name", "email"],
+      "callback": "http://localhost:3000/auth/google/callback"
+    }
+  }

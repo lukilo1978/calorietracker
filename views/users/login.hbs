@@ -1,0 +1,128 @@
+<style>
+  /* Center the form container */
+  .form-container {
+    max-width: 400px; /* Limit form width */
+    margin: 50px auto; /* Center horizontally */
+    padding: 20px; /* Add internal padding */
+    background-color: #f8f9fa; /* Light grey background */
+    border: 1px solid #ddd; /* Light border for structure */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+
+  /* Form heading */
+  .form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  /* Error messages */
+  .alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    color: white;
+    background-color: #dc3545; /* Bootstrap danger color */
+    border-radius: 4px;
+  }
+
+  .alert p {
+    margin: 0;
+  }
+
+  /* Labels */
+  .form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+
+  /* Input fields */
+  .form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Rounded corners */
+  }
+
+  /* Buttons */
+  .form-container button,
+  .form-container a.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .form-container .btn-info {
+    background-color: #17a2b8; /* Bootstrap info color */
+  }
+
+  .form-container .btn-info:hover {
+    background-color: #138496; /* Darker shade on hover */
+  }
+
+  /* Footer link */
+  .form-container hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+
+  .form-container a {
+    color: #007bff; /* Bootstrap primary link color */
+    text-decoration: none;
+  }
+
+  .form-container a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="form-container">
+  <h1>
+    Login
+  </h1>
+
+  {{!-- Show error message if credentials are incorrect --}}
+  {{#if messages}}
+    <div class="alert alert-danger">
+      {{#each messages}}
+        <p>{{this}}</p>
+      {{/each}}
+    </div>
+  {{/if}}
+
+  <form method="post" action="/users/login">
+    <fieldset class="form-group">
+      <label for="email" class="col-2 control-label">
+        Email: *
+      </label>
+      <input name="email" id="email" required />
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="password" class="col-2 control-label">
+        Password: *
+      </label>
+      <input name="password" id="password" type="password" required />
+    </fieldset>
+    <fieldset class="form-group">
+      <button type="submit" class="btn btn-info">
+        Login
+      </button>
+      <a class="btn btn-info" href="/auth/google">Login with Google</a>
+      <hr />
+      New? Create an account
+      <a href="/users/register" title="Register">Register</a>
+    </fieldset>
+  </form>
+</div>

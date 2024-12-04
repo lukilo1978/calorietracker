@@ -1,0 +1,32 @@
+
+<div class="nutrition-summary">
+  <h2>Calories consumed today: {{{totalCalories}}} Kcal</h2>
+  <h4>Carbs: {{{totalCarbs}}}</h4>
+  <h4>Proteins: {{{totalProteins}}}</h4>
+  <h4>Fats: {{{totalFats}}}</h4>
+</div>
+<style>
+  .nutrition-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically aligns content */
+    align-items: center; /* Horizontally aligns content */
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0; /* Light grey background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 300px; /* Optional fixed width */
+    margin: 20px auto; /* Centers the div horizontally */
+  }
+
+  .nutrition-summary h2 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+
+  .nutrition-summary h4 {
+    margin-bottom: 10px;
+    color: #555;
+  }
+</style>

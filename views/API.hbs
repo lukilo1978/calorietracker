@@ -1,0 +1,80 @@
+<h1>Search Results for {{amount}} g of {{query}}</h1>
+<div class="nutrition-container">
+    {{#each nutritionData}}
+    <div class="nutrition-box">
+        <h4><strong>{{this.name}}</strong>:</h4>
+        <img src="{{image}}" alt="{{name}}">
+        <ul>
+            <li>
+                <h5>Calories:</h5>
+                {{nutrients.calories}} Kcal
+            </li>
+            <li>
+                <h5>Carbs:</h5>
+                {{nutrients.carbs}} g
+            </li>
+            <li>
+                <h5>Protein:</h5>
+                {{nutrients.protein}} g
+            </li>
+            <li>
+                <h5>Fats:</h5>
+                {{nutrients.fats}} g
+            </li>
+        </ul>
+    </div>
+    {{/each}}
+</div>
+
+<style>
+    /* Basic styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Flexbox container to display divs next to each other */
+    .nutrition-container {
+        display: flex;
+        flex-wrap: wrap; /* Allows wrapping of divs if they don't fit */
+        gap: 20px; /* Adds space between divs */
+        justify-content: center; /* Centers the divs horizontally */
+    }
+
+    /* Style for each individual div */
+    .nutrition-box {
+        background-color: #f0f0f0; /* Grey background */
+        padding: 20px;
+        border-radius: 8px;
+        width: 250px; /* You can adjust the width */
+        text-align: center;
+    }
+
+    /* Style for images inside the div */
+    .nutrition-box img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 8px;
+    }
+
+    /* Style for nutrition list */
+    .nutrition-box ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .nutrition-box li {
+        margin-bottom: 10px;
+    }
+
+    h4 {
+        margin-bottom: 10px;
+    }
+</style>
